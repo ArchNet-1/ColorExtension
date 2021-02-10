@@ -1,0 +1,24 @@
+{
+  "name": "com.archnet.extension.color",
+  "version": "1.0.0",
+  "displayName": "Arch Net Extension Color",
+  "description": "Extension to get Color from a Color Library, analyse from EnumLibrary and use Enum Extension",
+  "unity": "2020.1",
+  "unityRelease": "0b5",
+  "keywords": [
+    "Arch",
+    "ArchNet",
+    "Extension",
+    "Color",
+    "Custom"
+  ],
+  "author": {
+    "name": "Arch Net",
+    "email": "archnetmodule@gmail.com"
+  }
+  ,
+  "dependencies": {
+  "com.archnet.library.enum": "1.0.0",
+  "com.archnet.library.color": "1.0.0"
+  }
+}

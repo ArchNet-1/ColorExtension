@@ -1,0 +1,18 @@
+{
+    "name": "ArchNet.Editor.ColorExtension",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4957c55d64637164ca0cc7e63907def0",
+        "GUID:e2c748859bda1c94cb85848a75f1711a",
+        "GUID:5bcffe0bff3b2cf4592794c5b1976cfa"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
