@@ -1,4 +1,3 @@
-using ArchNet.Extension.Enum;
 using ArchNet.Library.Color;
 using ArchNet.Library.Enum;
 using System.Collections.Generic;
@@ -139,7 +138,12 @@ namespace ArchNet.Extension.Color.Editor
                 EditorGUILayout.LabelField("Int Value");
                 EditorGUILayout.Space(5);
 
-                _enumIndex.intValue = EditorGUILayout.IntField(_manager._enumIndex);             
+                _enumIndex.intValue = EditorGUILayout.IntField(_manager._enumIndex);     
+                
+                if(_enumIndex.intValue > _manager._colorLibrary.GetMaxValue())
+                {
+                    _enumIndex.intValue = _manager._colorLibrary.GetMaxValue();
+                }
             }
             else if (_manager._keyType == keyType.ENUM)
             {
@@ -148,14 +152,12 @@ namespace ArchNet.Extension.Color.Editor
 
                 _enumChoice.stringValue = _manager.GetEnumName();
 
-                if (_enumChoice.stringValue == "")
+                if (_enumChoice.stringValue != "")
                 {
-                    return;
-                }
+                    _enumChoices = _manager._enumLibrary.GetEnumKeys(_enumChoice.stringValue);
 
-                _enumChoices = EnumExtension.GetEnumKeys(_enumChoice.stringValue);
-
-                _enumIndex.intValue = EditorGUILayout.Popup(_manager._enumIndex, _enumChoices.ToArray());
+                    _enumIndex.intValue = EditorGUILayout.Popup(_manager._enumIndex, _enumChoices.ToArray());
+                }             
             }
 
             _manager._enumIndex = _enumIndex.intValue;

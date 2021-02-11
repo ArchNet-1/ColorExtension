@@ -1,6 +1,6 @@
-﻿using ArchNet.Extension.Enum;
-using ArchNet.Library.Color;
+﻿using ArchNet.Library.Color;
 using ArchNet.Library.Enum;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,15 +48,21 @@ namespace ArchNet.Extension.Color
             {
                 Type lEnumType = _enumLibrary.GetEnum(_colorLibrary);
 
-                lIndex = EnumExtension.GetEnumValue(lEnumType, _enumChoice);
+                lIndex = _enumLibrary.GetEnumValue(lEnumType, _enumChoice);
             }
             else
             {
                 lIndex = _enumIndex;
             }
 
+            while  (null ==_colorLibrary.GetColor(lIndex))
+            {
+                lIndex--;
+            }
+
             _color = _colorLibrary.GetColor(lIndex);
         }
+
 
         public Type GetEnum()
         {
