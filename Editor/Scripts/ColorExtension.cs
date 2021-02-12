@@ -58,6 +58,11 @@ namespace ArchNet.Extension.Color
             while  (null ==_colorLibrary.GetColor(lIndex))
             {
                 lIndex--;
+                if(lIndex < 0)
+                {
+                    lIndex = 0;
+                    break;
+                }
             }
 
             _color = _colorLibrary.GetColor(lIndex);
