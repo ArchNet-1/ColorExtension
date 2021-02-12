@@ -63,7 +63,6 @@ namespace ArchNet.Extension.Color
             _color = _colorLibrary.GetColor(lIndex);
         }
 
-
         public Type GetEnum()
         {
             return _enumLibrary.GetEnum(_colorLibrary);

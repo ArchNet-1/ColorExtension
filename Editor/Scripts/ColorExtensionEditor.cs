@@ -27,7 +27,7 @@ namespace ArchNet.Extension.Color.Editor
         private SerializedProperty _keyType = null;
         private SerializedProperty _enumIndex = null;
         private SerializedProperty _enumChoice = null;
-        private SerializedProperty _color = null;
+
         #endregion
 
         #region Unity Methods
@@ -63,7 +63,6 @@ namespace ArchNet.Extension.Color.Editor
             _keyType = serializedObject.FindProperty("_keyType");
             _enumIndex = serializedObject.FindProperty("_enumIndex");
             _enumChoice = serializedObject.FindProperty("_enumChoice");
-            _color = serializedObject.FindProperty("_color");
 
             EditorGUILayout.Space(10);
 
@@ -144,6 +143,10 @@ namespace ArchNet.Extension.Color.Editor
                 {
                     _enumIndex.intValue = _manager._colorLibrary.GetMaxValue();
                 }
+
+                _manager._enumIndex = _enumIndex.intValue;
+
+                _manager.LoadColor();
             }
             else if (_manager._keyType == keyType.ENUM)
             {
@@ -157,22 +160,23 @@ namespace ArchNet.Extension.Color.Editor
                     _enumChoices = _manager._enumLibrary.GetEnumKeys(_enumChoice.stringValue);
 
                     _enumIndex.intValue = EditorGUILayout.Popup(_manager._enumIndex, _enumChoices.ToArray());
-                }             
-            }
 
-            _manager._enumIndex = _enumIndex.intValue;
+                    _manager._enumIndex = _enumIndex.intValue;
 
-            if (_manager._keyType == keyType.ENUM)
-            {
-                // Set enum string value
-                _manager._enumChoice = _enumChoices[_enumIndex.intValue];
+                    // Set enum string value
+                    _manager._enumChoice = _enumChoices[_enumIndex.intValue];
+
+                    _manager.LoadColor();
+                }
+                else
+                {
+                    EditorGUILayout.LabelField("Color Library doesnt have an enum");
+                }
             }
 
             EditorGUILayout.EndVertical();
 
             EditorGUILayout.Space(5);
-
-            _manager.LoadColor();
         }
 
 
