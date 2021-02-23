@@ -42,40 +42,12 @@ namespace ArchNet.Extension.Color
         /// </summary>
         public void LoadColor()
         {
-            int lIndex;
-
-            if (_keyType == keyType.ENUM && _enumChoice != "")
-            {
-                Type lEnumType = _enumLibrary.GetEnum(_colorLibrary);
-
-                lIndex = _enumLibrary.GetEnumValue(lEnumType, _enumChoice);
-            }
-            else
-            {
-                lIndex = _enumIndex;
-            }
-
-            while  (null ==_colorLibrary.GetColor(lIndex))
-            {
-                lIndex--;
-                if(lIndex < 0)
-                {
-                    lIndex = 0;
-                    break;
-                }
-            }
-
-            _color = _colorLibrary.GetColor(lIndex);
-        }
-
-        public Type GetEnum()
-        {
-            return _enumLibrary.GetEnum(_colorLibrary);
+            _color = _colorLibrary.GetColor(_enumIndex);
         }
 
         public string GetEnumName()
         {
-            return _enumLibrary.GetEnumName(_colorLibrary);
+            return _enumLibrary.GetEnumName(_enumIndex);
         }
 
 

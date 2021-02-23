@@ -12,7 +12,7 @@ namespace ArchNet.Extension.Color.Editor
     /// @Author : Louis PAKEL
     /// </summary>
     [CustomEditor(typeof(ColorExtension))]
-    public class SpriteExtensionEditor : UnityEditor.Editor
+    public class ColorExtensionEditor : UnityEditor.Editor
     {
         #region Private Fields
         private List<string> _keyChoices = new List<string>();
@@ -49,7 +49,7 @@ namespace ArchNet.Extension.Color.Editor
             _warningInfos = null;
         }
 
-      
+
 
         public override void OnInspectorGUI()
         {
@@ -71,11 +71,23 @@ namespace ArchNet.Extension.Color.Editor
             // Sprite Data is set
             if (true == IsConditionsOK())
             {
-                EditorGUILayout.BeginHorizontal();
+                EnumLibrary lEnumLibrary = (EnumLibrary)_enumLibrary.objectReferenceValue;
+                ColorLibrary lColorLibrary = (ColorLibrary)_colorLibrary.objectReferenceValue;
 
-                DisplayEnum();
+                if (true == lEnumLibrary.IsExist(lColorLibrary))
+                {
+                    EditorGUILayout.BeginHorizontal();
 
-                EditorGUILayout.EndHorizontal();
+                    DisplayEnum();
+
+                    EditorGUILayout.EndHorizontal();
+                }
+                else
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    EditorGUILayout.LabelField("This library is not in the enum library, please verify your data", _warningInfos);
+                    EditorGUILayout.EndHorizontal();
+                }
             }
 
             EditorGUILayout.Space(10);
@@ -137,12 +149,7 @@ namespace ArchNet.Extension.Color.Editor
                 EditorGUILayout.LabelField("Int Value");
                 EditorGUILayout.Space(5);
 
-                _enumIndex.intValue = EditorGUILayout.IntField(_manager._enumIndex);     
-                
-                if(_enumIndex.intValue > _manager._colorLibrary.GetMaxValue())
-                {
-                    _enumIndex.intValue = _manager._colorLibrary.GetMaxValue();
-                }
+                _enumIndex.intValue = EditorGUILayout.IntField(_manager._enumIndex);
 
                 _manager._enumIndex = _enumIndex.intValue;
 
@@ -187,7 +194,7 @@ namespace ArchNet.Extension.Color.Editor
         /// <returns></returns>
         private bool IsConditionsOK()
         {
-            if (_colorLibrary == null ||( _enumLibrary == null && _manager._keyType == keyType.ENUM))
+            if (_colorLibrary == null || (_enumLibrary == null && _manager._keyType == keyType.ENUM))
             {
                 return false;
             }
@@ -197,7 +204,7 @@ namespace ArchNet.Extension.Color.Editor
                 return false;
             }
 
-            if (_manager._colorLibrary == null || ( _manager._enumLibrary == null && _manager._keyType == keyType.ENUM))
+            if (_manager._colorLibrary == null || (_manager._enumLibrary == null && _manager._keyType == keyType.ENUM))
             {
                 return false;
             }
