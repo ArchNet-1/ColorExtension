@@ -23,4 +23,4 @@ Add **ArchNet > Library Color** to an object with an Image, Text or SpriteRender
 
 ## License
 
-See [LICENSE.md](LICENSE.md).
+MIT, see [LICENSE.md](LICENSE.md).

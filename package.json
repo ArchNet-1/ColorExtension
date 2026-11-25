@@ -4,6 +4,7 @@
   "displayName": "ArchNet - Color Extension",
   "description": "Colors a UI element or a SpriteRenderer from a Color Library key, so the palette lives in one asset.",
   "unity": "6000.0",
+  "license": "MIT",
   "documentationUrl": "https://archnet-plateform.fr/#ColorExtension",
   "changelogUrl": "https://github.com/ArchNet-1/ColorExtension/blob/master/CHANGELOG.md",
   "licensesUrl": "https://github.com/ArchNet-1/ColorExtension/blob/master/LICENSE.md",
