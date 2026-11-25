@@ -1,0 +1,21 @@
+{
+    "name": "ArchNet.Extension.Color.Editor",
+    "rootNamespace": "ArchNet.Extension.Editor",
+    "references": [
+        "ArchNet.Extension.Color",
+        "ArchNet.Library.Color",
+        "ArchNet.Library.Core",
+        "ArchNet.Library.Core.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

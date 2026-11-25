@@ -1,24 +1,24 @@
 {
   "name": "com.archnet.extension.color",
-  "version": "1.0.0",
-  "displayName": "Arch Net Extension Color",
-  "description": "Extension to get Color from a Color Library, analyse from EnumLibrary and use Enum Extension",
-  "unity": "2020.1",
-  "unityRelease": "0b5",
+  "version": "2.0.0",
+  "displayName": "ArchNet - Color Extension",
+  "description": "Colors a UI element or a SpriteRenderer from a Color Library key, so the palette lives in one asset.",
+  "unity": "6000.0",
+  "documentationUrl": "https://archnet-plateform.fr/#ColorExtension",
+  "changelogUrl": "https://github.com/ArchNet-1/ColorExtension/blob/master/CHANGELOG.md",
+  "licensesUrl": "https://github.com/ArchNet-1/ColorExtension/blob/master/LICENSE.md",
+  "dependencies": {
+    "com.archnet.library.color": "2.0.0",
+    "com.archnet.library.core": "2.0.0"
+  },
   "keywords": [
-    "Arch",
-    "ArchNet",
-    "Extension",
-    "Color",
-    "Custom"
+    "archnet",
+    "extension",
+    "color"
   ],
   "author": {
-    "name": "Arch Net",
-    "email": "archnetmodule@gmail.com"
-  }
-  ,
-  "dependencies": {
-  "com.archnet.library.enum": "1.0.0",
-  "com.archnet.library.color": "1.0.0"
+    "name": "ArchNet",
+    "email": "archnetmodule@gmail.com",
+    "url": "https://archnet-plateform.fr"
   }
 }

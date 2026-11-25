@@ -1,10 +1,9 @@
 {
-    "name": "ArchNet.Editor.ColorExtension",
-    "rootNamespace": "",
+    "name": "ArchNet.Extension.Color",
+    "rootNamespace": "ArchNet.Extension",
     "references": [
-        "GUID:4957c55d64637164ca0cc7e63907def0",
-        "GUID:e2c748859bda1c94cb85848a75f1711a",
-        "GUID:5bcffe0bff3b2cf4592794c5b1976cfa"
+        "ArchNet.Library.Color",
+        "ArchNet.Library.Core"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
